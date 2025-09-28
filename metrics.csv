@@ -1,0 +1,2 @@
+algorithm,n,elapsed_ns,max_depth,comparisons,allocations
+MergeSort,1000,1900800,7,13749,4000
