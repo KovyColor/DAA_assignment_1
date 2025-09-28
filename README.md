@@ -1,13 +1,13 @@
 # Assignment 1 – Divide & Conquer Algorithms
 
-## 🎯 Learning Goals
+## Learning Goals
 - Implement classic divide-and-conquer algorithms with safe recursion patterns.  
 - Analyze running-time recurrences using the Master Theorem and Akra–Bazzi intuition.  
 - Collect metrics (execution time, recursion depth, comparisons/allocations) and compare with theoretical predictions.  
 
 ---
 
-## 🛠 Implemented Algorithms
+## Implemented Algorithms
 1. **MergeSort**  
    - Uses reusable buffer for merging.  
    - Falls back to InsertionSort for small subarrays (cutoff optimization).  
@@ -30,7 +30,7 @@
 
 ---
 
-## 📊 Metrics & Results
+## Metrics & Results
 During experiments the following metrics were collected:  
 - Execution time (ns → ms).  
 - Maximum recursion depth.  
@@ -57,7 +57,7 @@ ClosestPair,5000,7654321,16,90000,0
 
 ---
 
-## 📌 Observations
+## Observations
 - **MergeSort** shows stable O(n log n) growth; cutoff helps small cases.  
 - **QuickSort** is fast on random data, recursion depth ≈ 2 log₂n as expected.  
 - **Deterministic Select** confirms O(n), but slower than QuickSelect due to higher constants.  
@@ -66,14 +66,14 @@ ClosestPair,5000,7654321,16,90000,0
 
 ---
 
-## 🧪 Testing
+## Testing
 - Sorting algorithms tested on random and adversarial arrays.  
 - Select verified against `Arrays.sort(a)[k]` (100 random trials).  
 - Closest Pair validated against brute-force O(n²) on small inputs (n ≤ 2000).  
 
 ---
 
-## 🌳 GitHub Workflow
+## GitHub Workflow
 - **Main branch**: `main` (stable releases: v0.1, v1.0).  
 - **Feature branches**:  
   - `feature/mergesort`  
@@ -98,7 +98,7 @@ ClosestPair,5000,7654321,16,90000,0
 
 ---
 
-## 🚀 How to Run
+## How to Run
 In IntelliJ IDEA:  
 1. Open **Run → Edit Configurations…**.  
 2. Set `assignment1.Main` as the main class.  
