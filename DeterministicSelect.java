@@ -4,8 +4,7 @@ public class DeterministicSelect {
     private final Metrics m;
 
     public DeterministicSelect(Metrics m) { this.m = m; }
-
-    // returns k-th smallest element (0-based)
+    
     public int select(int[] a, int k) {
         m.startTimer();
         m.enter();
@@ -46,7 +45,6 @@ public class DeterministicSelect {
             swap(a, l + numMedians, medianIdx);
             numMedians++;
         }
-        // recursively find median of medians
         return selectInplace(a, l, l + numMedians - 1, numMedians / 2);
     }
 
@@ -78,3 +76,5 @@ public class DeterministicSelect {
         int t = a[i]; a[i] = a[j]; a[j] = t;
     }
 }
+
+// Deterministic Select (Median-of-Medians)
