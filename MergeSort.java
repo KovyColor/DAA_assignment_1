@@ -9,7 +9,7 @@ public class MergeSort {
         m.startTimer();
         m.enter();
         int[] buf = new int[a.length];
-        m.addAlloc(a.length * 4L); // rough bytes estimate
+        m.addAlloc(a.length * 4L);
         mergesort(a, buf, 0, a.length);
         m.exit();
         m.stopTimer();
@@ -19,14 +19,13 @@ public class MergeSort {
         m.enter();
         try {
             int n = r - l;
-            if (n <= 32) { // cutoff to insertion sort
+            if (n <= 32) {
                 insertion(a, l, r);
                 return;
             }
             int mid = (l + r) >>> 1;
             mergesort(a, buf, l, mid);
             mergesort(a, buf, mid, r);
-            // merge
             int i = l, j = mid, k = l;
             while (i < mid && j < r) {
                 m.addComparisons(1);
@@ -56,3 +55,4 @@ public class MergeSort {
 }
 
 // MergeSort implementation
+

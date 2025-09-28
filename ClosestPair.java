@@ -33,7 +33,6 @@ public class ClosestPair {
                 for (int i = l; i < r; ++i)
                     for (int j = i+1; j < r; ++j)
                         best = Math.min(best, dist(byX[i], byX[j]));
-                // sort by y for merge step (stable)
                 Arrays.sort(byX, l, r, (a,b) -> Double.compare(a.y, b.y));
                 return best;
             }
@@ -42,7 +41,6 @@ public class ClosestPair {
             double dl = rec(byX, tmp, l, mid);
             double dr = rec(byX, tmp, mid, r);
             double d = Math.min(dl, dr);
-            // merge by y into tmp
             int i = l, j = mid, k = l;
             while (i < mid && j < r) {
                 if (byX[i].y <= byX[j].y) tmp[k++] = byX[i++];
@@ -51,13 +49,11 @@ public class ClosestPair {
             while (i < mid) tmp[k++] = byX[i++];
             while (j < r) tmp[k++] = byX[j++];
             System.arraycopy(tmp, l, byX, l, n);
-            // collect strip
             Point[] strip = new Point[n];
             int sc = 0;
             for (int t = l; t < r; ++t) {
                 if (Math.abs(byX[t].x - midx) < d) strip[sc++] = byX[t];
             }
-            // check up to 7 neighbors
             for (int p = 0; p < sc; ++p) {
                 for (int q = p+1; q < sc && (strip[q].y - strip[p].y) < d; ++q) {
                     d = Math.min(d, dist(strip[p], strip[q]));
@@ -75,3 +71,4 @@ public class ClosestPair {
         return Math.hypot(dx, dy);
     }
 }
+
