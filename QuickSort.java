@@ -28,7 +28,6 @@ public class QuickSort {
                 }
                 int pivotIndex = lo + rnd.nextInt(n);
                 int pivot = a[pivotIndex];
-                // 3-way partition to handle duplicates
                 int i = lo, lt = lo, gt = hi;
                 while (i <= gt) {
                     m.addComparisons(1);
@@ -36,12 +35,11 @@ public class QuickSort {
                     else if (a[i] > pivot) { swap(a, i, gt--); }
                     else i++;
                 }
-                // recurse on smaller side, iterate on larger
                 int leftSize = lt - lo;
                 int rightSize = hi - gt;
                 if (leftSize < rightSize) {
                     quicksort(a, lo, lt - 1);
-                    lo = gt + 1; // iterate on right
+                    lo = gt + 1;
                 } else {
                     quicksort(a, gt + 1, hi);
                     hi = lt - 1;
@@ -68,3 +66,4 @@ public class QuickSort {
         int t = a[i]; a[i] = a[j]; a[j] = t;
     }
 }
+
