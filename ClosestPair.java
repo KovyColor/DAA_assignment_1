@@ -75,3 +75,5 @@ public class ClosestPair {
         return Math.hypot(dx, dy);
     }
 }
+
+// Closest Pair of Points in 2D
