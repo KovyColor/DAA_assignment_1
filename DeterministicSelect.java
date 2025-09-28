@@ -4,7 +4,7 @@ public class DeterministicSelect {
     private final Metrics m;
 
     public DeterministicSelect(Metrics m) { this.m = m; }
-    
+
     public int select(int[] a, int k) {
         m.startTimer();
         m.enter();
@@ -77,4 +77,3 @@ public class DeterministicSelect {
     }
 }
 
-// Deterministic Select (Median-of-Medians)

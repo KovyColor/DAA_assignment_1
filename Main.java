@@ -8,8 +8,6 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        // Simple CLI: args = [algorithm] [n] [csvPath]
-        // algorithm: mergesort | quicksort | select | closest
         String alg = args.length > 0 ? args[0] : "mergesort";
         int n = args.length > 1 ? Integer.parseInt(args[1]) : 100_000;
         String csv = args.length > 2 ? args[2] : "metrics.csv";
@@ -29,7 +27,7 @@ public class Main {
 
             case "quicksort":
                 int[] a2 = randomIntArray(n);
-                SortUtils.shuffle(a2); // make adversarial less likely
+                SortUtils.shuffle(a2);
                 QuickSort qs = new QuickSort(m);
                 qs.sort(a2);
                 System.out.println("sorted? " + SortUtils.isSorted(a2));
@@ -80,3 +78,4 @@ public class Main {
         return pts;
     }
 }
+
