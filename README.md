@@ -46,17 +46,6 @@ Select,10000,5432100,12,51000,0
 ClosestPair,5000,7654321,16,90000,0
 
 
-### Plots
-*(insert actual graphs here, generated from `metrics.csv`)*  
-
-- **Time vs Input Size (n)**  
-  ![time graph](plots/time_vs_n.png)  
-
-- **Recursion Depth vs Input Size (n)**  
-  ![depth graph](plots/depth_vs_n.png)  
-
----
-
 ## Observations
 - **MergeSort** shows stable O(n log n) growth; cutoff helps small cases.  
 - **QuickSort** is fast on random data, recursion depth ≈ 2 log₂n as expected.  
