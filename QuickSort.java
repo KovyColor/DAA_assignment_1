@@ -68,3 +68,5 @@ public class QuickSort {
         int t = a[i]; a[i] = a[j]; a[j] = t;
     }
 }
+
+// QuickSort implementation with randomized pivot
